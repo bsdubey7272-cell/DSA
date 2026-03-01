@@ -6,7 +6,7 @@ class Solution {
             int digit = n.charAt(i) - '0';
 
             if (digit > cnt) {
-                cnt = digit;   // update maximum digit
+                cnt = digit;   
             }
         }
 
