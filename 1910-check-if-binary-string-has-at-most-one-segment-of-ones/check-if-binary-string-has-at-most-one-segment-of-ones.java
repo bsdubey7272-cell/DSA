@@ -1,16 +1,16 @@
 class Solution {
     public boolean checkOnesSegment(String s) {
-        int cnt=0;
-        if(s.length()==1 && s.charAt(0)=='1'){
-            return true;
+       int cnt=0;
+       int n=s.length();
+
+       for(int i=0;i<n;i++){
+        if(s.charAt(i)=='1') cnt++;
+        while(i<n&& s.charAt(i)=='1'){
+            i++;
         }
-        for(int i=0;i<s.length()-1;i++){
-            if(s.charAt(i)=='0'&&s.charAt(i+1)=='1'){
-                return false;
-            }
-        }
-        
-        return true;
-        
+       }
+       if(cnt>1) return false;
+       
+       return true;
     }
 }
