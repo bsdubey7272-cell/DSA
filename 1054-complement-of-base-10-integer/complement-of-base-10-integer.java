@@ -1,21 +1,14 @@
 class Solution {
     public int bitwiseComplement(int n) {
-        if(n==0){
-            return 1;
-        }
-        if(n==1) return 0;
-        String ans=Integer.toBinaryString(n);
-        StringBuilder result=new StringBuilder();
-        for(int i=0;i<ans.length();i++){
-            if(ans.charAt(i)=='1'){
-               result.append('0');
-            }
-            else {
-               result.append('1');
-            }
-        }
-        return  Integer.parseInt(result.toString(),2);
-
-        
+        if(n==0) return 1;
+       int cnt=0;
+       int result=0;
+       while(n>0){
+        int rem=n%2;
+         result+=Math.pow(2,cnt)*(1-rem);
+         cnt++;
+        n=n/2;
+       }
+        return result;
     }
 }
