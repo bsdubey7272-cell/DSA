@@ -1,5 +1,8 @@
 class Solution {
     public int bitwiseComplement(int n) {
+        if(n==0){
+            return 1;
+        }
         String ans=Integer.toBinaryString(n);
         StringBuilder result=new StringBuilder();
         for(int i=0;i<ans.length();i++){
