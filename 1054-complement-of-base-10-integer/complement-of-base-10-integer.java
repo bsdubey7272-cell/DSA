@@ -3,6 +3,7 @@ class Solution {
         if(n==0){
             return 1;
         }
+        if(n==1) return 0;
         String ans=Integer.toBinaryString(n);
         StringBuilder result=new StringBuilder();
         for(int i=0;i<ans.length();i++){
