@@ -7,7 +7,7 @@ class Solution {
                result.append('0');
             }
             else {
-               result.append('1');;
+               result.append('1');
             }
         }
         return  Integer.parseInt(result.toString(),2);
