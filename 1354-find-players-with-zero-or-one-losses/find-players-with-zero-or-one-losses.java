@@ -1,16 +1,12 @@
 class Solution {
     public List<List<Integer>> findWinners(int[][] matches) {
-
         Map<Integer,Integer> lost = new HashMap<>();
-
         for(int[] it : matches){
             int lose = it[1];
             lost.put(lose, lost.getOrDefault(lose,0) + 1);
         }
-
         ArrayList<Integer> notlost = new ArrayList<>();
         ArrayList<Integer> onelost = new ArrayList<>();
-
         for(int[] it : matches){
             int won = it[0];
             int lose = it[1];
