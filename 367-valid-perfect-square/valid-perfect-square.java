@@ -1,7 +1,7 @@
 class Solution {
     public boolean isPerfectSquare(int num) {
         if(num==1||num==0) return true;
-        for(int i=1;i<=num/i;i++){
+        for(int i=1;i<num;i++){
             if((long)i*i==num) return true;
         }
         return false;
