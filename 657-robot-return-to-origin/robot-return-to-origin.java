@@ -16,7 +16,8 @@ class Solution {
             }
             
 
-        }if(moveU==moveD&&movesL==movesR){
+        }
+        if(moveU==moveD&&movesL==movesR){
                 return true;
             }
         return false;
