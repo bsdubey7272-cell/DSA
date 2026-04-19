@@ -7,8 +7,9 @@ class Solution {
             if(nums1[i]<=nums2[j]){
                 maxdis=Math.max(maxdis,j-i);
                 j++;
-
-            }else i++;
+            }else{ 
+                i++;
+            }
         }
         return maxdis;
         
