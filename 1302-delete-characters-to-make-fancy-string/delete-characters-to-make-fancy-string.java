@@ -13,7 +13,6 @@ class Solution {
                 result.append(s.charAt(i));
             }
         }
-
-        return result.toString();
+    return result.toString();
     }
 }
