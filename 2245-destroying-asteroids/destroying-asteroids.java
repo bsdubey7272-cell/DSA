@@ -3,21 +3,15 @@ class Solution {
        
         int n=asteroids.length;
         Arrays.sort(asteroids);
-        long crrsum=mass;
-        for(int i:asteroids){
-             
-            if(crrsum<i){
-                return false;
-                
-
-               
-            }
-            crrsum+=i;
-             
-           
-
-        }
-        return true;
         
+       for(int aster:asteroids){
+        if(aster>mass){
+            return false;
+        }else if(mass>=1e5){
+            return true;
+        }
+        mass+=aster;
+       }
+        return true;
     }
 }
