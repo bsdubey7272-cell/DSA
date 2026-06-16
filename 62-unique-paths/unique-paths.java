@@ -2,7 +2,7 @@ class Solution {
     int dp[][];
     
     public int uniquePaths(int m, int n) {
-        dp=new int[m][n];
+        dp=new int[m+1][n+1];
         for(int i=0;i<m;i++){
             Arrays.fill(dp[i],-1);
         }
