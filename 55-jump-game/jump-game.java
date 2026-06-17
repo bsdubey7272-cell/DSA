@@ -1,13 +1,39 @@
+import java.util.*;
+
 class Solution {
+
+    Boolean[] dp;
+
     public boolean canJump(int[] nums) {
-        int n=nums.length;
-        int maxjump=0;
-        for(int i=0;i<n;i++){
-            if(i>maxjump) return false;
-            maxjump=Math.max(maxjump,i+nums[i]);
+
+        dp = new Boolean[nums.length];
+
+        return solve(0, nums);
+    }
+
+    public boolean solve(int i, int[] nums) {
+
+        if (i >= nums.length - 1) {
+            return true;
         }
-        return true;
-        
-        
+
+        if (nums[i] == 0) {
+            return false;
+        }
+
+        if (dp[i] != null) {
+            return dp[i];
+        }
+
+        for (int jump = 1; jump <= nums[i]; jump++) {
+
+            if (solve(i + jump, nums)) {
+                dp[i] = true;
+                return true;
+            }
+        }
+
+        dp[i] = false;
+        return false;
     }
 }
