@@ -1,9 +1,13 @@
 class Solution {
     public int findGCD(int[] nums) {
-        Arrays.sort(nums);
-        int smallest=nums[0];
-        int largest=nums[nums.length-1];
-        return gcd(smallest,largest);
+       
+       int max=Integer.MIN_VALUE;
+       int min=Integer.MAX_VALUE;
+       for(int i=0;i<nums.length;i++){
+        max=Math.max(max,nums[i]);
+        min=Math.min(min,nums[i]);
+       }
+        return gcd(min,max);
 
     }
     public int gcd(int a,int b){
