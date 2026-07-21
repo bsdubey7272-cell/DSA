@@ -1,27 +1,23 @@
 class Solution {
-    public int[] searchRange(int[] nums, int target) {
-        return new int[]{first(nums,target),last(nums,target)};
-        
-    }
-    public int first(int nums[],int target){
-        int ans=-1;
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]==target){
-                ans=i;
-                break;
+    public int[] searchRange(int[] arr, int key) {
+       
+        int first=-1;
+        int last=-1;
+       
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==key){
+            first=i;
+            break;
             }
         }
-        return ans;
-    }
-    public int last(int nums[],int target){
-        int ans=-1;
-        for(int i=nums.length-1;i>=0;i--){
-            if(nums[i]==target){
-                ans=i;
+        for(int i=arr.length-1;i>=0;i--){
+            if(arr[i]==key){
+                last= i;
                 break;
             }
-
+            
         }
-        return ans;
+       
+        return new int []{first,last};
     }
 }
