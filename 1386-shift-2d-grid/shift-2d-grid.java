@@ -1,40 +1,47 @@
 class Solution {
     public List<List<Integer>> shiftGrid(int[][] grid, int k) {
-        int n=grid.length;
-        int m=grid[0].length;
-        int arr[]=new int[n*m];
-        int idx=0;
-        k=k%(n*m);
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                arr[idx++]=grid[i][j];
-            }
-        }
-        List<List<Integer>>ans  =new ArrayList<>();
-        reverse(arr,0,arr.length-1);
-        reverse(arr,0,k-1);
-        reverse(arr,k,arr.length-1);
-        int idxx=0;
-        for(int i=0;i<n;i++){
-            List<Integer> row=new ArrayList<>();
-            for(int j=0;j<m;j++ ){
-                row.add(arr[idxx++]);
-            }
-            ans.add(row);
 
+        int row = grid.length;
+        int column = grid[0].length;
+
+        int total = row * column;
+        k %= total;
+
+        reverse(grid, 0, total - 1);
+        reverse(grid, 0, k - 1);
+        reverse(grid, k, total - 1);
+
+        List<List<Integer>> ans = new ArrayList<>();
+
+        for (int i = 0; i < row; i++) {
+            List<Integer> list = new ArrayList<>();
+            for (int j = 0; j < column; j++) {
+                list.add(grid[i][j]);
+            }
+            ans.add(list);
         }
+
         return ans;
-
-        
     }
-    public void reverse(int arr[],int left,int right){
-        while(left<right){
-            int temp=arr[left];
-            arr[left]=arr[right];
-            arr[right]=temp;
+
+    public void reverse(int[][] grid, int left, int right) {
+
+        int column = grid[0].length;
+
+        while (left < right) {
+
+            int r1 = left / column;
+            int c1 = left % column;
+
+            int r2 = right / column;
+            int c2 = right % column;
+
+            int temp = grid[r1][c1];
+            grid[r1][c1] = grid[r2][c2];
+            grid[r2][c2] = temp;
+
             left++;
             right--;
         }
-
     }
 }
