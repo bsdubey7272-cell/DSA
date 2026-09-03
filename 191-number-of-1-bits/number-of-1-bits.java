@@ -5,7 +5,7 @@ class Solution {
         if(n%2==1){
             cnt++;
         }
-        n=n/2;
+       n=n>>1;
        }
        return cnt;
         
