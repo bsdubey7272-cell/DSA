@@ -4,7 +4,8 @@ class Solution {
             return 0;
         }
         
-        return n-1000+1;
+        int ans= n-1000+1;
+        return ans;
         
     }
 }
