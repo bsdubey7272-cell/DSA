@@ -3,8 +3,8 @@ class Solution {
         if(n<1000){
             return 0;
         }
-        int ans=n-1000+1;
-        return ans;
+        
+        return n-1000+1;
         
     }
 }
